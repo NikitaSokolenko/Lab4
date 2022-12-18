@@ -1,0 +1,194 @@
+\hypertarget{classmodAlphaCipher}{}\doxysubsection{Класс mod\+Alpha\+Cipher}
+\label{classmodAlphaCipher}\index{modAlphaCipher@{modAlphaCipher}}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmodAlphaCipher_a4f0a86c20f5d836f66cb1e640d875e6b}\label{classmodAlphaCipher_a4f0a86c20f5d836f66cb1e640d875e6b}} 
+\mbox{\hyperlink{classmodAlphaCipher_a4f0a86c20f5d836f66cb1e640d875e6b}{mod\+Alpha\+Cipher}} ()=delete
+\begin{DoxyCompactList}\small\item\em запрет конструктора без параметров \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmodAlphaCipher_a6f73e244687a234f58e21b3189b05ce1}{mod\+Alpha\+Cipher}} (string skey)
+\begin{DoxyCompactList}\small\item\em Конструктор для установки ключа. Ключ является целым положительным числом. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classmodAlphaCipher_a8fc30c8afac15d9c1fbbe97457933603}{encrypt}} (string \&open\+\_\+text)
+\begin{DoxyCompactList}\small\item\em Заширование текста маршрутным перестановочным шифром. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classmodAlphaCipher_aeb7ce2030fe67f7a41172657c5cb7bf1}{decrypt}} (string \&cipher\+\_\+text)
+\begin{DoxyCompactList}\small\item\em Расширование текста маршрутным перестановочным шифром. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmodAlphaCipher_a7943fc938b5b9ca97c2beaa06fb03875}{Key\+Check}} (string \&skey)
+\begin{DoxyCompactList}\small\item\em Проверка ключа на корректность. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmodAlphaCipher_ac88d0704f268fdea15c329572f0cbdb3}{Length\+Check}} (int \&skey, string \&stext)
+\begin{DoxyCompactList}\small\item\em Проверка длины теста. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmodAlphaCipher_a9f10da807f12a6a0d127fdc857374311}{Text\+Check}} (string \&stext)
+\begin{DoxyCompactList}\small\item\em Проверка теста на пустоту. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmodAlphaCipher_aa7bba91671e2f0edd83f11ed218dd555}\label{classmodAlphaCipher_aa7bba91671e2f0edd83f11ed218dd555}} 
+int \mbox{\hyperlink{classmodAlphaCipher_aa7bba91671e2f0edd83f11ed218dd555}{key}}
+\begin{DoxyCompactList}\small\item\em Ключ для шифрования \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Конструктор(ы)}
+\mbox{\Hypertarget{classmodAlphaCipher_a6f73e244687a234f58e21b3189b05ce1}\label{classmodAlphaCipher_a6f73e244687a234f58e21b3189b05ce1}} 
+\index{modAlphaCipher@{modAlphaCipher}!modAlphaCipher@{modAlphaCipher}}
+\index{modAlphaCipher@{modAlphaCipher}!modAlphaCipher@{modAlphaCipher}}
+\doxyparagraph{\texorpdfstring{modAlphaCipher()}{modAlphaCipher()}}
+{\footnotesize\ttfamily mod\+Alpha\+Cipher\+::mod\+Alpha\+Cipher (\begin{DoxyParamCaption}\item[{string}]{skey }\end{DoxyParamCaption})}
+
+
+
+Конструктор для установки ключа. Ключ является целым положительным числом. 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em ключ,std\+::string.} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{classcipher__error}{cipher\+\_\+error}}} & в случае некорректного ключа. Параметры исключения\+: 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{type = invalid\_argument, what =\textcolor{stringliteral}{"{}Invalid key"{}}}
+
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsubsection{Методы}
+\mbox{\Hypertarget{classmodAlphaCipher_aeb7ce2030fe67f7a41172657c5cb7bf1}\label{classmodAlphaCipher_aeb7ce2030fe67f7a41172657c5cb7bf1}} 
+\index{modAlphaCipher@{modAlphaCipher}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!modAlphaCipher@{modAlphaCipher}}
+\doxyparagraph{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily string mod\+Alpha\+Cipher\+::decrypt (\begin{DoxyParamCaption}\item[{string \&}]{cipher\+\_\+text }\end{DoxyParamCaption})}
+
+
+
+Расширование текста маршрутным перестановочным шифром. 
+
+Символы текста перставляются по алгоритму маршрутной перестановки\+: В качестве ключа берётся количество столбцов таблицы. Маршрут записи\+: сверху вниз, справа налево. Маршрут считывания\+: по горизонтали слева направо, сверху вниз. Если строка пустая или ключ больше половины шифротекста, возбуждает исключение. 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em строка} & с шифротекстом, std\+::string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Строка std\+::string текста. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::cipher\+\_\+error} & в случае некорректного текста. 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{type = invalid\_argument, what =\textcolor{stringliteral}{"{}Key is too long"{}}, \textcolor{stringliteral}{"{}Empty message"{}}}
+
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classmodAlphaCipher_a8fc30c8afac15d9c1fbbe97457933603}\label{classmodAlphaCipher_a8fc30c8afac15d9c1fbbe97457933603}} 
+\index{modAlphaCipher@{modAlphaCipher}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!modAlphaCipher@{modAlphaCipher}}
+\doxyparagraph{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily string mod\+Alpha\+Cipher\+::encrypt (\begin{DoxyParamCaption}\item[{string \&}]{open\+\_\+text }\end{DoxyParamCaption})}
+
+
+
+Заширование текста маршрутным перестановочным шифром. 
+
+Символы текста перставляются по алгоритму маршрутной перестановки\+: В качестве ключа берётся количество столбцов таблицы. Маршрут записи\+: по горизонтали слева направо, сверху вниз. Маршрут считывания\+: сверху вниз, справа налево. Если строка пустая или ключ больше половины текста для шифрования, возбуждает исключение. 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em строка} & с текстом, std\+::string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Строка std\+::string шифротекста. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::cipher\+\_\+error} & в случае некорректного текста. 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{type = invalid\_argument, what =\textcolor{stringliteral}{"{}Key is too long"{}}, \textcolor{stringliteral}{"{}Empty message"{}}}
+
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classmodAlphaCipher_a7943fc938b5b9ca97c2beaa06fb03875}\label{classmodAlphaCipher_a7943fc938b5b9ca97c2beaa06fb03875}} 
+\index{modAlphaCipher@{modAlphaCipher}!KeyCheck@{KeyCheck}}
+\index{KeyCheck@{KeyCheck}!modAlphaCipher@{modAlphaCipher}}
+\doxyparagraph{\texorpdfstring{KeyCheck()}{KeyCheck()}}
+{\footnotesize\ttfamily void mod\+Alpha\+Cipher\+::\+Key\+Check (\begin{DoxyParamCaption}\item[{string \&}]{skey }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Проверка ключа на корректность. 
+
+Корректный текст\+: целое положительное число не больше половины длины текста. Если ключ не является целым положительным числом, возбуждает исключение. 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em строка} & с ключом, std\+::string. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::cipher\+\_\+error} & в случае некорректного ключа. 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{type = invalid\_argument, what =\textcolor{stringliteral}{"{}Invalid key"{}}}
+
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classmodAlphaCipher_ac88d0704f268fdea15c329572f0cbdb3}\label{classmodAlphaCipher_ac88d0704f268fdea15c329572f0cbdb3}} 
+\index{modAlphaCipher@{modAlphaCipher}!LengthCheck@{LengthCheck}}
+\index{LengthCheck@{LengthCheck}!modAlphaCipher@{modAlphaCipher}}
+\doxyparagraph{\texorpdfstring{LengthCheck()}{LengthCheck()}}
+{\footnotesize\ttfamily void mod\+Alpha\+Cipher\+::\+Length\+Check (\begin{DoxyParamCaption}\item[{int \&}]{skey,  }\item[{string \&}]{stext }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Проверка длины теста. 
+
+Корректный текст\+: строка символов в 2 или более раза длинне ключа. Если ключ слишком длинный, возбуждает исключение. 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em строка} & с текстаом, std\+::string. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::cipher\+\_\+error} & в случае некорректного текста. 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{type = invalid\_argument, what =\textcolor{stringliteral}{"{}Key is too long"{}}}
+
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classmodAlphaCipher_a9f10da807f12a6a0d127fdc857374311}\label{classmodAlphaCipher_a9f10da807f12a6a0d127fdc857374311}} 
+\index{modAlphaCipher@{modAlphaCipher}!TextCheck@{TextCheck}}
+\index{TextCheck@{TextCheck}!modAlphaCipher@{modAlphaCipher}}
+\doxyparagraph{\texorpdfstring{TextCheck()}{TextCheck()}}
+{\footnotesize\ttfamily void mod\+Alpha\+Cipher\+::\+Text\+Check (\begin{DoxyParamCaption}\item[{string \&}]{stext }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Проверка теста на пустоту. 
+
+Если текст пустой, возбуждает исключение. 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em строка} & с текстаом, std\+::string. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::cipher\+\_\+error} & в случае некорректного текста. 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{type = invalid\_argument, what =\textcolor{stringliteral}{"{}Empty message"{}}}
+
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyExceptions}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{modAlphaCipher_8h}{mod\+Alpha\+Cipher.\+h}}\item 
+mod\+Alpha\+Cipher.\+cpp\end{DoxyCompactItemize}

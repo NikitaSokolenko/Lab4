@@ -1,0 +1,41 @@
+\begin{theindex}
+
+  \item {cipher\_error}, \hyperpage{2}
+
+  \indexspace
+
+  \item {decrypt}
+    \subitem {modAlphaCipher}, \hyperpage{3}
+
+  \indexspace
+
+  \item {encrypt}
+    \subitem {modAlphaCipher}, \hyperpage{4}
+
+  \indexspace
+
+  \item {KeyCheck}
+    \subitem {modAlphaCipher}, \hyperpage{4}
+
+  \indexspace
+
+  \item {LengthCheck}
+    \subitem {modAlphaCipher}, \hyperpage{5}
+
+  \indexspace
+
+  \item {modAlphaCipher}, \hyperpage{3}
+    \subitem {decrypt}, \hyperpage{3}
+    \subitem {encrypt}, \hyperpage{4}
+    \subitem {KeyCheck}, \hyperpage{4}
+    \subitem {LengthCheck}, \hyperpage{5}
+    \subitem {modAlphaCipher}, \hyperpage{3}
+    \subitem {TextCheck}, \hyperpage{5}
+  \item {modAlphaCipher.h}, \hyperpage{6}
+
+  \indexspace
+
+  \item {TextCheck}
+    \subitem {modAlphaCipher}, \hyperpage{5}
+
+\end{theindex}
